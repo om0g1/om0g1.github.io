@@ -198,7 +198,7 @@ section{
     min-width: 370px;
     width: 100%;
     padding: var(--medium-gap) var(--margin);
-    /* margin-bottom: var(--very-large-gap); */
+    margin-bottom: var(--large-gap);
     /* animation: fadein 7s linear; */
     position: relative;
 }
@@ -208,6 +208,7 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--large-gap);
 }
 
 .section-title a{
@@ -738,9 +739,9 @@ body::before{
     row-gap: var(--medium-gap);
 }
 
-/* #documents div:nth-child(2) a{
-    font-size: calc(var(--very-large-text)/2);
-} */
+#documents div:nth-child(2) a{
+    color: var(--primary-grey);
+}
 
 #documents div:nth-child(2) a::before{
     content: "> ";
@@ -800,13 +801,9 @@ body::before{
     row-gap: var(--medium-gap);
 }
 
-/* #footer div:nth-child(3) h3{
-    font-size: calc(var(--very-large-text)/1.5);
-}
-
 #footer div:nth-child(3) ul li a{
-    font-size: calc(var(--very-large-text)/2.5);
-} */
+    color: var(--primary-grey);
+}
 
 #footer div:nth-child(4){
     width: 100%;
@@ -1053,8 +1050,43 @@ body::before{
     height: fit-content;
 }
 
-.carousel-sampler div div .fancy-tile{
-    aspect-ratio: 1.618;
+.carousel-sampler div div a{
+    aspect-ratio: 1/1.256;
+    position: relative;
+    background-color: var(--faded-white);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-sampler div div a img{
+    object-fit: cover;
+}
+
+.carousel-sampler div div a:hover img{
+    width: 120%;
+}
+
+.carousel-sampler div div a p{
+    text-align: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--large-gap);
+}
+
+.carousel-sampler div div a p::before{
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
 
 #image-list ul{
@@ -1213,6 +1245,9 @@ body::before{
     #socials ul{
         grid-template-columns: repeat(7, auto);
     }
+    .carousel-sampler div div a{
+        aspect-ratio: 1.256;
+    }
 }
 
 @media screen and (width >= 992px) {
@@ -1248,4 +1283,35 @@ body::before{
     #description div:first-of-type{
         width: 50%;
     }
+}
+
+@media (hover) {
+    .carousel-sampler div div a p{
+        display: none;
+    }
+    .carousel-sampler div div a:hover p{
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent, transparent);
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(2px);
+        padding: var(--large-gap);
+        color: var(--primary-white);
+    }
+    
+    .carousel-sampler div div a:hover p::before{
+        content: "";
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5);
+    }   
 }
