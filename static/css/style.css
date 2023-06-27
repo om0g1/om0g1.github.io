@@ -199,7 +199,7 @@ section{
     width: 100%;
     padding: var(--medium-gap) var(--margin);
     margin-bottom: var(--large-gap);
-    animation: fadein 10s both;
+    /*animation: fadein 10s both;*/
     position: relative;
 }
 
