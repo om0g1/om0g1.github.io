@@ -128,3 +128,9 @@ const vaswiper = new Swiper("#vas", swiperOptions);
 const mswiper = new Swiper("#ms", swiperOptions);
 const cswiper = new Swiper("#cs", swiperOptions);
 }
+
+window.onload = function () {
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+  }, 5000);
+};
