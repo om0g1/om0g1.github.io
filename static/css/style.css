@@ -199,7 +199,7 @@ section{
     width: 100%;
     padding: var(--medium-gap) var(--margin);
     margin-bottom: var(--large-gap);
-    animation: fadein 7s ease-in-out;
+    animation: fadein 10s both;
     position: relative;
 }
 
@@ -549,7 +549,7 @@ body::before{
     align-items: center;
     flex-direction: column;
     gap: var(--very-large-gap);
-    animation: fadein 7s ease-in-out;
+    animation: fadein 10s both;
 }
 
 #hero div{
@@ -1158,7 +1158,7 @@ body::before{
     display: flex;
     align-items: center;
     backdrop-filter: blur(10px);
-    animation: fadein 7s ease-in-out;
+    animation: fadein 10s both;
     /* clip-path: polygon(0% 10%, 0% 100%, 100% 100%, 100% 10%, 90% 0%, 10% 0%); */
     /* animation: fadein 7s linear; */
 }
