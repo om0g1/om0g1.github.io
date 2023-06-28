@@ -4,12 +4,12 @@ const hackerMen = document.querySelectorAll("h1, h2, h3, h4, p, .hacker-man");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const blobs = document.querySelectorAll("#blob, #blob-top");
 
-let options = {
+const options = {
   rootMargin: "3000px 0px 100px 0px",
   threshold: 0,
 };
 
-let options2 = {
+const options2 = {
     rootMargin: "3000px 0px -100px 0px",
     threshold: 0,
 };
