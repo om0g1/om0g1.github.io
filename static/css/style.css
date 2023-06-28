@@ -465,7 +465,7 @@ body::before{
 .nav-active::before,
 .nav-active::after{
     content: "";
-    width: 120%;
+    width: 125%;
     position: absolute;
     bottom: 0;
 }
@@ -494,20 +494,20 @@ body::before{
 
 .nav-active a{
     color: var(--theme-blue);
-    animation: float 2.5s infinite normal;
+    animation: float 2.5s infinite ease;
 }
 
 #top-nav ul li:hover::before,
 #top-nav ul li:hover::after{
     content: "";
-    width: 120%;
+    width: 125%;
     position: absolute;
     bottom: 0;
 }
 
 #top-nav ul li:hover::before{
     height: 100%;
-    background-image: linear-gradient(to top, rgba(0, 164, 235, 0.125), transparent);
+    background-image: linear-gradient(to top, rgba(0, 164, 235, 0.125), rgba(0, 164, 235, 0.125), transparent);
     animation: grow-up var(--transition-time) ease;
     z-index: -1;
 }
@@ -552,6 +552,22 @@ body::before{
     border-radius: 50px;
     border-bottom: calc(var(--small-gap)/3) solid var(--theme-blue);
     backdrop-filter: blur(20px);
+    position: relative;
+}
+
+#top-nav div:last-of-type:hover::before{
+    content: "coming soon";
+    position: absolute !important;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    background-color: var(--primary-grey);
+    padding: var(--small-gap);
+    bottom: 0;
+    right: 0;
+    transform: translateY(110%);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 10%, 20% 10%, 10% 10%);
 }
 
 #top-nav div:last-of-type svg{
