@@ -645,6 +645,7 @@ body::before{
 #skills{
     position: relative;
     width: 100%;
+    height: max-content;
 }
 
 #skills:after{
@@ -907,6 +908,10 @@ body::before{
     width: 100%;
 }
 
+#description p{
+    width: fit-content;
+}
+
 #description img{
     opacity: 90%;
 }
@@ -922,16 +927,16 @@ body::before{
     gap: var(--medium-gap);
 }
 
-/* #description div:nth-child(2) ul li p{
+#description div:nth-child(2) ul li p{
     color: var(--primary-grey);
-} */
+}
 
 #description div:nth-child(2) ul li p::before{
     content: ">";
     color: var(--theme-blue);
 }
 
-#description div:nth-child(2) ul li p span{
+#description div:nth-child(2) ul li p b{
     font-weight: bold;
 }
 

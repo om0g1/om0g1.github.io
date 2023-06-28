@@ -5,12 +5,8 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const blobs = document.querySelectorAll("#blob, #blob-top");
 
 const options = {
-  rootMargin: "3000px 0px 100px 0px",
-  threshold: 0,
-};
-
-const options2 = {
-    rootMargin: "3000px 0px -100px 0px",
+    root: document.querySelector("body"),
+    rootMargin: "2000px 0px 0px 0px",
     threshold: 0,
 };
 
@@ -43,7 +39,7 @@ const hackerManObserver = new IntersectionObserver(entries => {
     if(entry.isIntersecting) hackerMan(entry);
   })
   }
-  , options2
+  , options
 );
 
 hackerMen.forEach(element => {
@@ -132,5 +128,6 @@ const cswiper = new Swiper("#cs", swiperOptions);
 window.onload = function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
+    hackerMen.forEach(entry => {hackerMan({"target": entry})});
   }, 5000);
 };
