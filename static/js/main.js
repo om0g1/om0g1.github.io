@@ -129,7 +129,3 @@ window.onload = function () {
     hackerMen.forEach(entry => {hackerMan({"target": entry})});
   }, 4000);
 };
-
-function sendEmail() {
-  alert("coming soon, contact me from my socials below")
-}

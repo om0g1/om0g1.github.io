@@ -1,6 +1,6 @@
 :root{
     --transition-time: 0.3s;
-    --theme-blue: #00a4eb;
+    --theme-blue: rgb(0, 164, 235);
     --faded-black: rgba(0, 0, 0, 0.75);
     --theme-red: rgb(235, 0, 70);
     --theme-purple: rgb(235, 164, 235);
@@ -455,32 +455,66 @@ body::before{
     position: relative;
 }
 
-#nav-active{
-    color: var(--theme-blue);
-}
 
 .nav-active{
+    aspect-ratio: 1;
     color: var(--theme-blue);
+    position: relative;
+}
+
+.nav-active::before,
+.nav-active::after{
+    content: "";
+    width: 120%;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav-active::before{
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 164, 235, 0.125), rgba(0, 164, 235, 0.125), transparent);
+    animation: grow-up var(--transition-time) ease;
+    z-index: -1;
+}
+
+@keyframes grow-up {
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
 }
 
 .nav-active::after{
     content: "";
-    width: 100%;
     height: 1px;
     background-image: linear-gradient(to right, transparent, var(--theme-blue), transparent);
-    /* background-color: var(--theme-blue); */
+}
+
+.nav-active a{
+    color: var(--theme-blue);
+    animation: float 2.5s infinite normal;
+}
+
+#top-nav ul li:hover::before,
+#top-nav ul li:hover::after{
+    content: "";
+    width: 120%;
     position: absolute;
     bottom: 0;
 }
 
+#top-nav ul li:hover::before{
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 164, 235, 0.125), transparent);
+    animation: grow-up var(--transition-time) ease;
+    z-index: -1;
+}
+
 #top-nav ul li:hover::after{
-    content: "";
-    width: 100%;
     height: 1px;
     background-image: linear-gradient(to right, transparent, var(--theme-blue), transparent);
-    /* background-color: var(--theme-blue); */
-    position: absolute;
-    bottom: 0;
 }
 
 #top-nav ul li a{
@@ -496,6 +530,17 @@ body::before{
     color: var(--theme-blue);
 }
 
+@keyframes float {
+    0%{
+        transform: translateY(-5%);
+    }
+    50%{
+        transform: translateY(2%);
+    }
+    100%{
+        transform: translateY(-5%);
+    }
+}
 
 #top-nav div:last-of-type{
     width: 100%;
@@ -746,15 +791,6 @@ body::before{
 #contact-me form *{
     width: 100%;
 }
-
-/* #contact-me form input,
-#contact-me form textarea{
-    font-size: calc(var(--very-large-text)/2.5);
-} */
-
-/* #contact-me form input{
-    height: var(--very-large-text);
-} */
 
 #documents{
     display: flex;
@@ -1218,7 +1254,7 @@ body::before{
 
 #footer-nav ul li{
     height: 100%;
-    width: 40%;
+    width: 50%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
@@ -1368,6 +1404,9 @@ body::before{
         width: 50%;
     }
     #contact-me div{
+        width: 70%;
+        align-self: center;
+        justify-content: center;
         text-align: center;
     }
     #contact-me form{
