@@ -28,8 +28,8 @@ function hackerMan(event){
       clearInterval(interval);
     }
     
-    iteration += event.target.dataset.text.length / 21;
-  }, 35);
+    iteration += event.target.dataset.text.length / 27;
+  }, 30);
 }
 
 const hackerManObserver = new IntersectionObserver(entries => {
@@ -126,6 +126,6 @@ const cswiper = new Swiper("#cs", swiperOptions);
 window.onload = function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
-    hackerMen.forEach(entry => {hackerMan({"target": entry})});
+    document.querySelectorAll("h1, h2, .hacker-observe").forEach(entry => {hackerMan({"target": entry})});
   }, 4000);
 };
