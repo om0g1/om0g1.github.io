@@ -10,7 +10,7 @@ let options = {
 };
 
 let options2 = {
-    rootMargin: "5000px 0px -65px 0px",
+    rootMargin: "3000px 0px -100px 0px",
     threshold: 0,
 };
 
