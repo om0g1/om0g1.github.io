@@ -117,6 +117,11 @@ ul, ol{
     fill: var(--theme-blue);
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
 .hacker-man{
     font-family: Spacemono;
 }
@@ -124,6 +129,7 @@ ul, ol{
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover ,h6:hover{
     color: var(--theme-blue);
     cursor: pointer;
+    
 }
 
 img, video{
@@ -863,32 +869,72 @@ body::before{
     width: 50%;
 }
 
-.instagram-icon:hover{
+.instagram-icon{
     fill: #c13584;
 }
 
-.facebook-icon:hover{
+.facebook-icon{
     fill: #3b5998;;
 }
 
-.twitter-icon:hover{
+.twitter-icon{
     fill: #1dcaff;
 }
 
-.youtube-icon:hover{
+.youtube-icon{
     fill: #cd201f;
 }
 
-.discord-icon:hover{
+.discord-icon{
     fill: #404eed;
 }
 
-.telegram-icon:hover{
+.telegram-icon{
     fill: #26A5E5;
 }
 
-.email-icon:hover{
+.email-icon{
     fill: rgb(12, 155, 31);
+}
+
+.whatsapp-icon{
+    fill: rgb(39, 211, 104);
+}
+
+.github-icon{
+    fill: rgb(31,35,40);
+}
+
+.linkedin-icon{
+    fill: rgb(10,102,194);
+}
+
+.fbmessenger-icon{
+    fill: rgb(0,128,255);
+}
+
+.snapchat-icon{
+    fill: rgb(255,252,0);
+}
+
+.medium-icon{
+    fill: rgb(41,41,41);
+}
+
+.quora-icon{
+    fill: rgb(185,43,39);
+}
+
+.pinterest-icon{
+    fill: rgb(230,0,35);
+}
+
+.reddit-icon{
+    fill: rgb(255,69,0);
+}
+
+.tiktok-icon{
+    fill: rgb(254,44,85);
 }
 
 .page-header{
@@ -906,10 +952,6 @@ body::before{
 
 #description *{
     width: 100%;
-}
-
-#description p{
-    width: fit-content;
 }
 
 #description img{
@@ -1323,6 +1365,13 @@ body::before{
     }
     #description div:first-of-type{
         width: 50%;
+    }
+    #contact-me div{
+        text-align: center;
+    }
+    #contact-me form{
+        width: 70%;
+        align-self: center;
     }
 }
 

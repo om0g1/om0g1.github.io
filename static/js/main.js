@@ -6,7 +6,7 @@ const blobs = document.querySelectorAll("#blob, #blob-top");
 
 const options = {
     root: document.querySelector("body"),
-    rootMargin: "2000px 0px 0px 0px",
+    rootMargin: "2000px 0px 2000px 0px",
     threshold: 0,
 };
 
@@ -18,20 +18,18 @@ function hackerMan(event){
     event.target.innerText = event.target.innerText
       .split("")
       .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.text[index];
-        } 
+        if(index < iteration){return event.target.dataset.text[index];}
         if (letter == " ") return " ";
         return letters[Math.floor(Math.random() * 26)]
       })
-      .join("");
+      .join(""); 
     
     if(iteration >= event.target.dataset.text.length){ 
       clearInterval(interval);
     }
     
-    iteration += event.target.dataset.text.length / 27;
-  }, 30);
+    iteration += event.target.dataset.text.length / 21;
+  }, 35);
 }
 
 const hackerManObserver = new IntersectionObserver(entries => {
@@ -44,14 +42,14 @@ const hackerManObserver = new IntersectionObserver(entries => {
 
 hackerMen.forEach(element => {
   element.dataset.text = element.innerText;
-  element.classList.add("hacker-man"); element.onmouseover = hackerMan;
+  element.onmouseover = hackerMan;
 })
 
 var work_index = 0;
 const works = ["a Full stack Developer","an Artist","a Full Stack Web Developer", "a Front End Webdeveloper","a Backend Webdeveloper",
               "a Musician","a Photo editor"];
-hackerMen.forEach(element => hackerManObserver.observe(element));
 
+document.querySelectorAll(".hacker-observe").forEach(element => hackerManObserver.observe(element));
 const hackerNext = document.querySelector(".hacker-next");
 
 if (hackerNext != null) {
@@ -129,5 +127,9 @@ window.onload = function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
     hackerMen.forEach(entry => {hackerMan({"target": entry})});
-  }, 5000);
+  }, 3000);
 };
+
+function sendEmail() {
+  alert("coming soon, contact me from my socials below")
+}
