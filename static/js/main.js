@@ -127,7 +127,7 @@ window.onload = function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
     hackerMen.forEach(entry => {hackerMan({"target": entry})});
-  }, 3000);
+  }, 4000);
 };
 
 function sendEmail() {
