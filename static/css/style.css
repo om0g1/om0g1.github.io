@@ -609,7 +609,7 @@ body::before{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--small-gap);
+    padding: calc(var(--small-gap)/2);
     background-color: var(--theme-blue);
 }
 
