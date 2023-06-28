@@ -1210,6 +1210,7 @@ body::before{
     justify-content: center;
     align-items: center;
     padding: var(--large-gap);
+    color: var(--primary-grey);
 }
 
 .carousel-sampler div div a p::before{
