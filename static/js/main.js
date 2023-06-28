@@ -11,7 +11,7 @@ let options = {
 
 let options2 = {
     rootMargin: "5000px 0px -65px 0px",
-    threshold: 0.5,
+    threshold: 0,
 };
 
 function hackerMan(event){
