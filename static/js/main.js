@@ -1,6 +1,6 @@
 const hero = document.querySelector("#hero");
 const tiles = document.querySelectorAll(".fancy-tile, .wide-fancy-tile");
-const hackerMen = document.querySelectorAll("h1, h2, h3, h4, p, .hacker-man");
+const hackerMen = document.querySelectorAll("h1, h2, h4, p, .hacker-man");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const blobs = document.querySelectorAll("#blob, #blob-top");
 
@@ -13,22 +13,24 @@ const options = {
 function hackerMan(event){
   let interval = null;
   let iteration = 0;
+  const target = event.target;
+  const par_len = target.dataset.text.length;
   clearInterval(interval);
   interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
+    target.innerText = target.innerText
       .split("")
       .map((letter, index) => {
-        if(index < iteration){return event.target.dataset.text[index];}
+        if(index < iteration){return target.dataset.text[index];}
         if (letter == " ") return " ";
         return letters[Math.floor(Math.random() * 26)]
       })
       .join(""); 
     
-    if(iteration >= event.target.dataset.text.length){ 
+    if(iteration >= par_len){ 
       clearInterval(interval);
     }
     
-    iteration += event.target.dataset.text.length / 27;
+    iteration += par_len / 27;
   }, 30);
 }
 

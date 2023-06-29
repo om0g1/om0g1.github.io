@@ -1,11 +1,12 @@
 :root{
     --transition-time: 0.3s;
     --theme-blue: rgb(0, 164, 235);
+    --secondary-blue: rgba(44, 148, 192, 0.9);
     --faded-black: rgba(0, 0, 0, 0.75);
     --theme-red: rgb(235, 0, 70);
     --theme-purple: rgb(235, 164, 235);
     --primary-white: rgba(255, 255, 255, 0.9);
-    --secondary-white: rgba(170, 170, 170, 0.9);
+    --secondary-white: rgba(200, 200, 200, 0.9);
     --primary-grey: rgba(190, 190, 190, 0.8);
     --primary-black: #0a0a0a;
     --faded-white: rgba(255, 255, 255, 0.1);
@@ -68,6 +69,7 @@ ul, ol{
     z-index: 1;
     clip-path: polygon(0% 100%, 85% 100%, 100% 85%, 100% 0%, 99.5% 84.5%, 84.5% 99.5%);
     opacity: 90%;
+    box-shadow: 10px 10px;
 }
 
 .wide-fancy-tile{
@@ -129,7 +131,6 @@ p,
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover ,h6:hover{
     color: var(--theme-blue);
     cursor: pointer;
-    
 }
 
 img, video{
@@ -402,7 +403,7 @@ body::before{
     transform: translate(-50%, -50%);
     background-image: linear-gradient(to right, var(--theme-blue), var(--theme-purple));
     animation: blob-rotate 15s infinite;
-    opacity: 100%;
+    opacity: 70%;
     filter: blur(12px);
 }
 
@@ -436,13 +437,21 @@ body::before{
     background-color: var(--faded-black);
 }
 
+#top-nav h3{
+    font-family: Rounded;
+    white-space: nowrap;
+}
+
+#top-nav h3 a{
+    color: var(--theme-blue);
+}
+
 #top-nav ul{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, auto);
     align-items: center;
     justify-items: center;
-    gap: var(--large-gap);
 }
 
 #top-nav ul li{
@@ -559,15 +568,18 @@ body::before{
     content: "coming soon";
     position: absolute !important;
     z-index: 1;
-    width: fit-content;
+    width: 40%;
     height: fit-content;
     position: relative;
     background-color: var(--primary-grey);
     padding: var(--small-gap);
-    bottom: 0;
-    right: 0;
+    top: 10%;
+    right: -40%;
     transform: translateY(110%);
-    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 10%, 20% 10%, 10% 10%);
+    clip-path: polygon(0% 0%, 5% 15%, 5% 100%, 100% 100%, 100% 0%);
+    animation: float 2.5s infinite ease;
+    text-align: center;
+    white-space: nowrap;
 }
 
 #top-nav div:last-of-type svg{
@@ -1113,13 +1125,11 @@ body::before{
 
 #skills-badges ul{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
     gap: var(--large-gap);
 }
 
 #skills-badges ul li{
-    /* aspect-ratio: 1/1; */
-    /* border-radius: 50%; */
     background-color: var(--faded-white);
     backdrop-filter: blur(5px);
     display: flex;
@@ -1130,7 +1140,33 @@ body::before{
 }
 
 #skills-badges ul li svg{
-    fill: var(--theme-blue);
+    fill: var(--theme-blue) !important;
+}
+
+#skills-badges ul li p{
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--large-gap);
+    color: var(--primary-grey);
+}
+
+#skills-badges ul li p::before{
+    content: "";
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
 
 #article-samples div:nth-child(2){
@@ -1363,7 +1399,7 @@ body::before{
     }
     #top-nav{
         display: grid;
-        grid-template-columns: 10% auto 30%;
+        grid-template-columns: 25% auto 27%;
         align-content: center;
         gap: var(--very-large-gap);
     }
@@ -1394,6 +1430,10 @@ body::before{
     #hero div:first-of-type div{
         width: 20%;
     }
+    .sampler> *{
+        width: 70%;
+        align-self: center;
+    }
     #footer div:first-of-type{
         grid-area: wave;
     }
@@ -1420,6 +1460,9 @@ body::before{
     #description div:first-of-type{
         width: 50%;
     }
+    #skills-badges ul{
+        grid-template-columns: repeat(5, auto);
+    }
     #contact-me div{
         width: 70%;
         align-self: center;
@@ -1433,6 +1476,9 @@ body::before{
 }
 
 @media (hover) {
+    .sampler img{
+        opacity: 80%;
+    }
     .carousel-sampler div div a p{
         display: none;
     }
@@ -1450,9 +1496,8 @@ body::before{
         align-items: center;
         backdrop-filter: blur(2px);
         padding: var(--large-gap);
-        color: var(--primary-white);
+        color: var(--primary-grey);
     }
-    
     .carousel-sampler div div a:hover p::before{
         content: "";
         width: 150%;
@@ -1460,5 +1505,32 @@ body::before{
         position: absolute;
         z-index: -1;
         background-color: rgba(0, 0, 0, 0.5);
-    }   
+    } 
+    #skills-badges ul li p{
+        display: none;
+    }
+    #skills-badges ul li:hover p{
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent, transparent);
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(2px);
+        padding: var(--large-gap);
+    }
+    #skills-badges ul li:hover p::before{
+        content: "";
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
