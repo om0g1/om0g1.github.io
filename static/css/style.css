@@ -580,6 +580,7 @@ body::before{
     animation: float 2.5s infinite ease;
     text-align: center;
     white-space: nowrap;
+    border-radius: 0px 5px 5px 2px;
 }
 
 #top-nav div:last-of-type svg{
