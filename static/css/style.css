@@ -1185,7 +1185,9 @@ body::before{
 
 #article-samples div:nth-child(2) a div:nth-child(1){
     aspect-ratio: 1/1;
+    border-radius: 10px;
     overflow: hidden;
+    clip-path: polygon(0% 20%, 0% 100%, 100% 100%, 100% 0%, 25% 0%);
 }
 
 #article-samples div:nth-child(2) a div:nth-child(1) img{
