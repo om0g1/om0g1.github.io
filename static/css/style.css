@@ -1127,6 +1127,7 @@ body::before{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: var(--large-gap);
+    height: fit-content;
 }
 
 #skills-badges ul li{
