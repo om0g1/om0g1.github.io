@@ -1182,6 +1182,7 @@ body::before{
     gap: var(--medium-gap);
     padding: var(--medium-gap);
     background-color: var(--faded-white);
+    backdrop-filter: blur(20px);
 }
 
 #article-samples div:nth-child(2) a div:nth-child(1){
@@ -1189,6 +1190,9 @@ body::before{
     border-radius: 10px;
     overflow: hidden;
     clip-path: polygon(0% 20%, 0% 100%, 100% 100%, 100% 0%, 24% 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #article-samples div:nth-child(2) a div:nth-child(1) img{
@@ -1535,5 +1539,11 @@ body::before{
         position: absolute;
         z-index: -1;
         background-color: rgba(0, 0, 0, 0.5);
+    }
+    #article-samples div:nth-child(2) a{
+        backdrop-filter: none;
+    }
+    #article-samples div:nth-child(2) a:hover{
+        backdrop-filter: blur(20px);
     }
 }
