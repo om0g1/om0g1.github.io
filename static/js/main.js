@@ -129,5 +129,5 @@ window.onload = function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
     document.querySelectorAll("h1, h2, .hacker-observe").forEach(entry => {hackerMan({"target": entry})});
-  }, 4000);
+  }, 2000);
 };
