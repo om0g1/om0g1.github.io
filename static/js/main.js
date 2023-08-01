@@ -78,12 +78,13 @@ if (hackerNext !== null) {
   }, 5000);
 }
 
-document.body.onpointermove = event => {
-  const { clientX, clientY } = event;
-  blobs.forEach(blob => {
-    blob.style.left = `${clientX}px`;
-    blob.style.top = `${clientY}px`;
-  });
+document.body.onpointermove = event =>{
+  const {clientX, clientY} = event;
+  blobs.forEach(blob => blob.animate({
+  left: `${clientX}px`,
+  top: `${clientY}px`,
+  }, {duration: 2500, fill: "forwards"})
+  )
 };
 
 const swiperOptions = {
@@ -115,7 +116,7 @@ const cswiper = new Swiper("#cs", swiperOptions);
 
 window.onload = function () {
   setTimeout(() => {
-    document.getElementById("loader").style.display = "none";
-    document.querySelectorAll("h1, h2, .hacker-observe").forEach(hackerMan);
+    document.getElementById("loader").remove();
+    document.querySelectorAll("h1, h2, .hacker-observe").forEach(entry => {hackerMan({"target": entry})});
   }, 2000);
 };
